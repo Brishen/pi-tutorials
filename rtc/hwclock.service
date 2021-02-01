@@ -1,0 +1,11 @@
+[Unit]
+Description=Synchronise Hardware Clock to System Clock
+DefaultDependencies=no
+After=systemd-modules-load.service
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/hwclock -D --hctosys
+
+[Install]
+WantedBy=graphical.target multi-user.target
